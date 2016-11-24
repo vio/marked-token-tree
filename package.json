@@ -1,0 +1,27 @@
+{
+  "name": "marked-token-tree",
+  "version": "0.0.1",
+  "description": "Build a token tree from marked tokens",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint index.js test/*.js",
+    "test": "mocha test/index.js",
+    "bump": "npm run lint && npm run test && npm version patch && npm publish"
+  },
+  "keywords": [
+    "markdown"
+  ],
+  "author": "Vio <vio@beanon.com>",
+  "license": "ISC",
+  "dependencies": {
+    "marked": "^0.3.6"
+  },
+  "devDependencies": {
+    "eslint": "^3.10.2",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "lodash": "^4.17.2",
+    "mocha": "^3.1.2"
+  }
+}
