@@ -7,36 +7,36 @@ Build a tocken tree from [marked](https://www.npmjs.com/package/marked) tokens.
 ```js
 const tree = require('marked-token-tree');
 const source = `
-  # Main heading
-  
-  Main block text
-  
-  ## Section 1
-  
-  Second level block text
-  
-  ### Section 1.1
-  
-  Third level block text
-  
-  ### Section 1.2
-  
-  Third level block text
-  
-  ```stylus
-  .element
-      color: black
-  ```
-  
-  ```css
-  .element {
-      color: #000;
-  }
-  ```
-  
-  ## Section 2
-  
-  Second level block text
+    # Main heading
+
+    Main block text
+
+    ## Section 1
+
+    Second level block text
+
+    ### Section 1.1
+
+    Third level block text
+
+    ### Section 1.2
+
+    Third level block text
+
+    \`\`\`stylus
+    .element
+        color: black
+    \`\`\`
+
+    \`\`\`css
+    .element {
+        color: #000;
+    }
+    \`\`\`
+
+    ## Section 2
+
+    Second level block text
   `;
   
   const output = tree(source);
