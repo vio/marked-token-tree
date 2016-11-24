@@ -23,16 +23,16 @@ const source = `
 
     Third level block text
 
-    \`\`\`stylus
+    \```stylus
     .element
         color: black
-    \`\`\`
+    \```
 
-    \`\`\`css
+    \```css
     .element {
         color: #000;
     }
-    \`\`\`
+    \```
 
     ## Section 2
 
