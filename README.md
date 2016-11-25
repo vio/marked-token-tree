@@ -115,6 +115,6 @@ const fs = require('fs')
 const tree = require('marked-token-tree')
 const source = fs.readFileSync('./source.md')
 
-source.walk((token, block) => {
+tree(source).walk((token, block) => {
   // process token and coresponding block
 })
