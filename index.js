@@ -63,3 +63,13 @@ Block.prototype.addChild = function (token) {
 
   return childBlock
 }
+
+Block.prototype.walk = function (cb) {
+  const self = this; // eslint-disable semi
+
+  // Run the callback on all block tockens
+  [self.heading].concat(self.content).forEach(token => cb(token, self))
+
+  // Walk on the children blocks
+  self.children.forEach(child => child.walk(cb))
+}

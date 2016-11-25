@@ -24,3 +24,35 @@ describe('Build the token tree', () => {
     it(key, () => assert.equal(get(tokens, key), tests[key]))
   }
 })
+
+let step = 0
+const steps = {
+  1: {
+    'token.text': 'Main block text',
+    'block.heading.text': 'Main heading'
+  },
+  7: {
+    'token.text': 'Third level block text',
+    'block.heading.text': 'Section 1.2'
+  }
+}
+
+describe('Walk the tree', () => {
+  tokens.walk((token, block) => {
+    const actual = steps[step]
+
+    if (!actual) {
+      step += 1
+      return
+    }
+
+    it(`Step ${step}`, () => {
+      Object.keys(actual).forEach((key) => {
+        const val = actual[key]
+        assert.equal(get({ token, block }, key), val)
+      })
+    })
+
+    step += 1
+  })
+})
