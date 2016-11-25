@@ -6,9 +6,11 @@ Build a tocken tree from [marked](https://www.npmjs.com/package/marked) tokens.
 
 1. [Installation](#installation)
 2. [Usage](#usage)
+  1. [Get the tree object](#get-the-tree-object)
+  2. [Walk the token tree](#walk-the-token-tree)
 
 
-### Instalation
+## Instalation
 
 ```sh
 npm install --dev marked-token-tree
@@ -106,7 +108,7 @@ will output:
 }
 ```
 
-### Walk
+### Walk the token tree
 
 ```js
 const fs = require('fs')
