@@ -17,7 +17,7 @@ function buildTree (source) {
     // The main header
     if (currentBlock.depth === 0) {
       currentBlock.depth = 1
-      currentBlock.heading = token.text
+      currentBlock.heading = token
       return
     }
       // Create a new child block when the depth is smaller than current
@@ -42,8 +42,8 @@ function lookupParent (block, depth) {
   return lookupParent(block.parent, depth)
 }
 
-function Block ({ text = '', depth = 0 }) {
-  this.heading = text
+function Block ({ heading = {}, depth = 0 }) {
+  this.heading = heading
   this.depth = depth
   this.content = []
   this.children = []
@@ -56,7 +56,7 @@ Block.prototype.addContent = function (token) {
 }
 
 Block.prototype.addChild = function (token) {
-  const childBlock = new Block(token)
+  const childBlock = new Block({ heading: token, depth: token.depth })
 
   childBlock.parent = this
   this.children.push(childBlock)

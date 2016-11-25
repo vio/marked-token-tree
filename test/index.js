@@ -11,13 +11,15 @@ const source = fs.readFileSync(filename, 'utf-8')
 const tokens = tree(source)
 
 const tests = {
-  'heading': 'Main heading',
+  'heading.text': 'Main heading',
   'content[0].text': 'Main block text',
+  'children[0].heading.text': 'Section 1',
   'children[0].children[1].content[1].type': 'code',
+  'children[0].children[1].heading.text': 'Section 1.2',
   'children[1].content[0].text': 'Second level block text'
 }
 
-describe('Build a marked tree', () => {
+describe('Build the token tree', () => {
   for (let key in tests) {
     it(key, () => assert.equal(get(tokens, key), tests[key]))
   }
